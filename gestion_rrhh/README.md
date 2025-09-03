@@ -31,7 +31,7 @@ Sistema completo de gestión de recursos humanos desarrollado con **CodeIgniter 
 
 1. **Clonar el repositorio**
    ```bash
-   git clone https://github.com/nanocarp01/proyectos_codeigniter.git
+   git clone https://github.com/Pruebas-Org/proyectos.git
    cd proyectos_codeigniter/gestion_rrhh
    ```
 
