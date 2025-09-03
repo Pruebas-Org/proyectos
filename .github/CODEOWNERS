@@ -1,0 +1,10 @@
+# Code owners for the entire repository
+* @nanocarp01
+
+# Specific owners for RRHH project
+/gestion_rrhh/ @nanocarp01
+
+# Configuration files require special approval
+*.env @nanocarp01
+*.config @nanocarp01
+composer.json @nanocarp01
