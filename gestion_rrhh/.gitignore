@@ -1,0 +1,72 @@
+# CodeIgniter specific
+/vendor/
+/writable/logs/
+/writable/debugbar/
+/writable/cache/
+/writable/session/
+/public/writable/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.testing
+
+# Composer
+composer.phar
+composer.lock
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+bower_components/
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.min.css
+
+# Uploads (uncomment if you don't want to track uploads)
+# /public/uploads/
+# /writable/uploads/
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Backup files
+*.bak
+*.backup
+*.tmp
+
+# Large asset directories that can be regenerated
+/public/assets/vendor/fontawesome-free/
+/public/assets/vendor/jquery/
+/public/assets/vendor/bootstrap/
+
+# PHP specific
+.phpunit.result.cache

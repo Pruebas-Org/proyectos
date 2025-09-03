@@ -1,54 +1,124 @@
-# CodeIgniter 4 Framework
+# 📋 Sistema de Gestión de RRHH
 
-## What is CodeIgniter?
+Sistema completo de gestión de recursos humanos desarrollado con **CodeIgniter 4**.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## 🚀 Características
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+- **Gestión de empleados**: CRUD completo de personal
+- **Control de asistencias**: Registro y seguimiento de horarios
+- **Sistema de permisos**: Solicitudes y aprobaciones
+- **Comunicaciones internas**: Mensajería y notificaciones
+- **Panel administrativo**: Dashboard con métricas
+- **Interfaz moderna**: Bootstrap 4 + FontAwesome
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## 🛠️ Tecnologías
 
-The user guide corresponding to the latest version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+- **Backend**: CodeIgniter 4
+- **Base de datos**: MySQL/MariaDB
+- **Frontend**: Bootstrap 4, jQuery
+- **Iconos**: FontAwesome
+- **Servidor web**: Apache/Nginx
 
-## Important Change with index.php
+## 📦 Instalación
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+### Requisitos previos
+- PHP >= 7.4
+- MySQL/MariaDB
+- Composer
+- Servidor web (Apache/Nginx)
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+### Pasos de instalación
 
-**Please** read the user guide for a better explanation of how CI4 works!
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/nanocarp01/proyectos_codeigniter.git
+   cd proyectos_codeigniter/gestion_rrhh
+   ```
 
-## Repository Management
+2. **Instalar dependencias**
+   ```bash
+   composer install
+   ```
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+3. **Configurar base de datos**
+   ```bash
+   cp .env.example .env
+   # Editar .env con los datos de tu base de datos
+   ```
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+4. **Configurar permisos**
+   ```bash
+   chmod -R 755 writable/
+   ```
 
-## Contributing
+5. **Importar base de datos**
+   ```bash
+   # Importar el archivo SQL de la base de datos
+   mysql -u usuario -p nombre_bd < database.sql
+   ```
 
-We welcome contributions from the community.
+## ⚙️ Configuración
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+### Variables de entorno (.env)
+```env
+CI_ENVIRONMENT = development
+app.baseURL = 'http://localhost/gestion_rrhh/public/'
 
-## Server Requirements
+database.default.hostname = localhost
+database.default.database = gestion_rrhh
+database.default.username = tu_usuario
+database.default.password = tu_password
+database.default.DBDriver = MySQLi
+```
 
-PHP version 7.4 or higher is required, with the following extensions installed:
+## 📱 Uso
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+1. **Acceder al sistema**: `http://localhost/gestion_rrhh/public/`
+2. **Login**: Usar credenciales de administrador
+3. **Dashboard**: Ver métricas y accesos rápidos
+4. **Módulos**: Navegar por empleados, asistencias, permisos
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+## 🔧 Desarrollo
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+### Estructura del proyecto
+```
+gestion_rrhh/
+├── app/
+│   ├── Controllers/     # Controladores
+│   ├── Models/         # Modelos de datos
+│   ├── Views/          # Vistas
+│   └── Entities/       # Entidades
+├── public/             # Archivos públicos
+├── writable/           # Archivos escribibles
+└── system/             # Framework CodeIgniter
+```
+
+### Comandos útiles
+```bash
+# Limpiar cache
+php spark cache:clear
+
+# Ejecutar migraciones
+php spark migrate
+
+# Servidor de desarrollo
+php spark serve
+```
+
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crear una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit tus cambios (`git commit -am 'Agregar nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Crear un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## 📞 Contacto
+
+- **Autor**: Nano
+- **Email**: fernandoheredia33@gmail.com
+- **GitHub**: [@nanocarp01](https://github.com/nanocarp01)
