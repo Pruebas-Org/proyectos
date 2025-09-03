@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Database\Migrations;
+
+use CodeIgniter\Database\Migration;
+
+class ModifyUsuariosTable extends Migration
+{
+    public function up()
+    {
+        // Eliminar la restricción de clave externa primero
+        $this->db->query('ALTER TABLE Usuarios DROP FOREIGN KEY Usuarios_IdHorarios_foreign');
+
+        // Ahora eliminar la columna IdHorarios
+        $this->forge->dropColumn('Usuarios', 'IdHorarios');
+    }
+
+    public function down()
+    {
+        // Restaurar la columna IdHorarios si es necesario
+        $this->forge->addColumn('Usuarios', [
+            'IdHorarios' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+                'null' => true,
+            ],
+        ]);
+
+        // Agregar nuevamente la restricción de clave externa si es necesario
+        $this->db->query('ALTER TABLE Usuarios ADD CONSTRAINT Usuarios_IdHorarios_foreign FOREIGN KEY (IdHorarios) REFERENCES OtraTabla(OtraColumna)');
+    }
+}

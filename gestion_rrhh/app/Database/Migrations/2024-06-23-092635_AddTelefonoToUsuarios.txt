@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Database\Migrations;
+
+use CodeIgniter\Database\Migration;
+
+class AddTelefonoToUsuarios extends Migration
+{
+    public function up()
+    {
+        $fields = [
+            'Telefono' => [
+                'type' => 'VARCHAR',
+                'constraint' => 20, // Puedes ajustar la longitud según tus necesidades
+                'null' => true,
+                'after' => 'IdEquipo', // Colocar después del campo IdEquipo
+            ],
+        ];
+
+        $this->forge->addColumn('Usuarios', $fields);
+    }
+
+    public function down()
+    {
+        $this->forge->dropColumn('Usuarios', 'Telefono');
+    }
+}
