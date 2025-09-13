@@ -1,10 +1,7 @@
 <?php
-
 namespace App\Database\Migrations;
-
 use CodeIgniter\Database\Migration;
-
-class CreateUsuariosHorariosTable extends Migration
+class CreateDocumentosTable extends Migration
 {
     public function up()
     {
@@ -15,34 +12,35 @@ class CreateUsuariosHorariosTable extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'IdUsuarios' => [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
+            'Descripcion' => [
+                'type' => 'TEXT',
+                'null' => false,
             ],
-            'IdHorarios' => [
+            'IdUsuario' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
+                'null' => false,
             ],
             'created_at' => [
-                'type' => 'TIMESTAMP',
+                'type' => 'DATETIME',
                 'null' => false,
             ],
             'updated_at' => [
-                'type' => 'TIMESTAMP',
+                'type' => 'DATETIME',
                 'null' => false,
             ],
+            'deleted_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
         ]);
-
         $this->forge->addPrimaryKey('Id');
-        $this->forge->addForeignKey('IdUsuarios', 'Usuarios', 'Id', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('IdHorarios', 'Horarios', 'Id', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('UsuariosHorarios');
+        $this->forge->addForeignKey('IdUsuario', 'Usuarios', 'Id', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('Documentos');
     }
-
     public function down()
     {
-        $this->forge->dropTable('UsuariosHorarios');
+        $this->forge->dropTable('Documentos');
     }
 }

@@ -9,10 +9,10 @@ class ModifyUsuariosTable extends Migration
     public function up()
     {
         // Eliminar la restricción de clave externa primero
-        $this->db->query('ALTER TABLE Usuarios DROP FOREIGN KEY Usuarios_IdHorarios_foreign');
+       // $this->db->query('ALTER TABLE Usuarios DROP FOREIGN KEY Usuarios_IdHorarios_foreign');
 
         // Ahora eliminar la columna IdHorarios
-        $this->forge->dropColumn('Usuarios', 'IdHorarios');
+        //$this->forge->dropColumn('Usuarios', 'IdHorarios');
     }
 
     public function down()
