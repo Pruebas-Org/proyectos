@@ -24,6 +24,9 @@ Sistema completo de gestión de recursos humanos desarrollado con CodeIgniter 4.
 ## Instalación
 
 Cada proyecto tiene sus propias instrucciones de instalación en su respectiva carpeta.
+Luego de clonar proyecto
+crear base de datos llamada gestionRRHH y ejecutar 
+php spark migrate y php spark db:seed DatabaseSeeder 
 
 ## Licencia
 
