@@ -20,6 +20,11 @@ class CreateAsistenciaTable extends Migration
                 'constraint' => 11,
                 'unsigned' => true,
             ],
+            'session_token' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+                'null' => true,
+            ],
             'Fecha' => [
                 'type' => 'DATE',
             ],
