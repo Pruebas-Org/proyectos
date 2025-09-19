@@ -40,6 +40,10 @@ class CreateModulosTable extends Migration
                 'type' => 'TIMESTAMP',
                 'null' => false,
             ],
+            'deleted_at' => [
+                'type' => 'TIMESTAMP',
+                'null' => true,
+            ],
         ]);
 
         $this->forge->addPrimaryKey('Id');
